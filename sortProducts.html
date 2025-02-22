@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="product-list">
+        <h1>Список товаров</h1>
+        <input type="radio" id="asc" v-model="sortOrder" value="asc">
+        <label for="asc">По возрастанию</label>
+        <input type="radio" id="desc" v-model="sortOrder" value="desc">
+        <label for="desc">По убыванию</label>
+        <ul>
+            <li v-for="product in sortedProducts" :key="product.name">
+                {{ product.name }} - {{ product.price }}
+            </li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script><script>
+        new Vue({
+            el: '.product-list',
+            data: {
+                products: [
+                    { name: 'Товар 1', price: 100 },
+                    { name: 'Товар 2', price: 200 },
+                    { name: 'Товар 3', price: 50 },
+                    { name: 'Товар 4', price: 300 },
+                    { name: 'Товар 5', price: 150 },
+                ],
+                sortOrder: 'asc',
+            },
+            computed: {
+                sortedProducts() {
+                    return this.products.sort((a, b) => {
+                        if (this.sortOrder === 'asc') {
+                            return a.price - b.price;
+                        } else {
+                            return b.price - a.price;
+                        }
+                    });
+                },
+            },
+        })
+    </script>
+
+</body>
+
+</html>
