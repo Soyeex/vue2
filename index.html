@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTERNO</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/Logologo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    <div class="header">
+        <div class="logo">
+            <h1><img src="images/Logologo.png" alt="Logo-Interno">Interno </h1>
+        </div>
+        <div class="menu">
+            <a href="#">Домой</a>
+            <a href="#">Проект</a>
+            <a href="#">Блог</a>
+        </div>
+    </div>
+
+    <div class="banner">
+        <img src="images/Image1img.png" alt="">
+        <div class="text-overlay">
+            <h1>Пусть ваш дом будет уникальным</h1>
+            <p>Существует много вариаций Lorem Ipsum, которые можно использовать</p>
+            <button class="button">Начать <span>→</span></button>
+        </div>
+
+        <div class="project">
+            <div class="project-text">
+                <h1>Следите за нашими проектами</h1>
+                <p>Хорошо известно, что читатель будет отвлекаться <br> на читабельный контент страницы</p>
+            </div>
+        </div>
+            <div class="project-img">
+
+                <div class="img1">
+                    <img src="images/Imageleft-head.png" alt="">
+                    <h1>Современная кухня</h1>
+                    <p>Декор / Планировка</p>
+                    <button>></button>
+                </div>
+
+                <div class="img2">
+                    <img src="images/Imageright-head.png" alt="">
+                    <h1>Современная кухня</h1>
+                    <p>Декор / Планировка</p>
+                    <button>></button>
+                </div>
+            </div>
+
+            <div class="project-img2">
+                <div class="img3">
+                    <img style="margin-right: 100px;" src="images/Imageleft-foot.png" alt="">
+                    <h1>Современная кухня</h1>
+                    <p>Декор / Планировка</p>
+                    <button>></button>
+                </div>
+
+                <div class="img4">
+                    <img src="images/Imageright-foot.png" alt="">
+                    <h1>Современная кухня</h1>
+                    <p>Декор / Планировка</p>
+                    <button>></button>
+                </div>
+
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="counter">
+        <div class="column1">
+            <h1>12</h1>
+            <p>Лет опыта</p>
+        </div>
+        <div class="column2">
+            <h1>85</h1>
+            <p>Успешных проектов</p>
+        </div>
+        <div class="column3">
+            <h1>15</h1>
+            <p>Проектов в работе</p>
+        </div>
+        <div class="column4">
+            <h1>95</h1>
+            <p>Счастливых клиентов</p>
+        </div>
+    </div>
+
+    <div class="news">
+        <div class="description">
+            <h1>Статьи <br> & <br>Новости</h1>
+            <p>Хорошо известно, что читатель будет отвлекаться <br> на читабельный контент страницы</p>
+        </div>
+    </div>
+
+    <!-- <div class="news-cards">
+        <div class="news-card1">
+            <img src="images/Imagenews-1.png" alt="">
+            <h3>Создадим лучший <br> макет перепланировки</h3>
+            <p>26 Декабря, 2022 <button style="width: 52px; height: 52px;">></button></p>
+        </div>
+        <div class="news-card2">
+            <img src="images/Imagenews-2.png" alt="">
+            <h3>Лучшие интерьерные <br>идеи по низкой цене</h3>
+            <p>26 Декабря, 2022 <button style="width: 52px; height: 52px;">></button></p>
+        </div>
+        <div class="news-card3">
+            <img src="images/Imagenews-3.png" alt="">
+            <h3>Лучшие интерьерные <br>решения длф офисов</h3>
+            <p>26 Декабря, 2022 <button style="width: 52px; height: 52px;">></button></p>
+        </div>
+    </div> -->
+    <div class="news-vue">
+        <div class="news-card" v-for="item in news">
+            <img style="display: flex; justify-content: space-between;" :src="item.img" alt="">
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.date }} <button style="width: 70px; height: 70px; background-color: #F4F0EC; border-radius: 50px; color: #292F36; font-size: 20px; border: none;">></button></p>
+        </div>
+    </div>
+        <script type="module" src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '.news-vue',
+            data: {
+                news: [
+                    {
+                        img: 'images/Imagenews-1.png',
+                        title: 'Создадим лучший макет перепланировки',
+                        date: '26 Декабря, 2022',
+                    },
+                    {
+                        img: 'images/Imagenews-2.png',
+                        title: 'Лучшие интерьерные идеи по низкой цене',
+                        date: '26 Декабря, 2022',
+                    },
+                    {
+                        img: 'images/Imagenews-3.png',
+                        title: 'Лучшие интерьерные решения длф офисов',
+                        date: '26 Декабря, 2022',
+                    }
+                ],
+            },
+        })
+    </script>
+</body>
+
+</html>
